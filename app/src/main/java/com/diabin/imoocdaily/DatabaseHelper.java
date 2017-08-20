@@ -19,12 +19,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table if not exists imooc_cost("+
 
-                "id integer primary key"+
-                "cost_title varchar"+
-                "cost_date varchar"+
-                "cost_money varchar"+
-
-                ")");
+                "id integer primary key, "+
+                "cost_title varchar, "+
+                "cost_date varchar, "+
+                "cost_money varchar)"
+        );
     }
 
     @Override
