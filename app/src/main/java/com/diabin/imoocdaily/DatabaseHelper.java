@@ -2,6 +2,7 @@ package com.diabin.imoocdaily;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -37,6 +38,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         database.insert("imooc_cost",null,cv);
 
 
+    }
+
+    public Cursor getAllCostData(){
+        SQLiteDatabase database = getWritableDatabase();
+        return database.query("imooc_cost",null,null,null,null,null,"ASC");
     }
 
     @Override
