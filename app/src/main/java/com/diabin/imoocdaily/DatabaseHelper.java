@@ -1,5 +1,6 @@
 package com.diabin.imoocdaily;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -24,6 +25,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "cost_date varchar, "+
                 "cost_money varchar)"
         );
+    }
+
+    public void insertCost(CostBean costBean){
+
+        SQLiteDatabase database = getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put("cost_title",costBean.costTitle);
+        cv.put("cost_date",costBean.costDate);
+        cv.put("cost_money",costBean.costMoney);
+        database.insert("imooc_cost",null,cv);
+
+
     }
 
     @Override
