@@ -28,10 +28,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void initCostData() {
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 50; i++) {
             CostBean c  = new CostBean();
             c.costTitle = "222";
-            c.costDate = "222";
+            c.costDate = "11--22";
             c.costMoney = "222";
             mCostBeanList.add(c);
         }
