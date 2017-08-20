@@ -28,13 +28,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         );
     }
 
-    public void insertCost(CostBean costBean){
+    public void insertCost(CostBean c){
 
         SQLiteDatabase database = getWritableDatabase();
         ContentValues cv = new ContentValues();
-        cv.put("cost_title",costBean.costTitle);
-        cv.put("cost_date",costBean.costDate);
-        cv.put("cost_money",costBean.costMoney);
+        cv.put("cost_title",c.costTitle);
+        cv.put("cost_date",c.costDate);
+        cv.put("cost_money",c.costMoney);
         database.insert("imooc_cost",null,cv);
 
 
@@ -42,7 +42,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public Cursor getAllCostData(){
         SQLiteDatabase database = getWritableDatabase();
-        return database.query("imooc_cost",null,null,null,null,null,"ASC");
+        return database.query("imooc_cost",null,null,null,null,null,"cost_date "+"ASC");
     }
 
     @Override
